@@ -1,16 +1,17 @@
 // config/db.js
 const mongoose = require('mongoose');
 require('dotenv').config();
+const logger = require('../utils/logger');
 
 const connectDB = async () => {
     try {
-        console.log(`url de la page dans les var env ${process.env.MONGO_URI}`);
+        logger.info(`url de la page dans les var env ${process.env.MONGO_URI}`);
         await mongoose.connect(process.env.MONGO_URI);
-        console.log('MongoDB connecté');
+        logger.info('MongoDB connecté');
     } catch (err) {
         // console.error(err.message);
         // process.exit(1);
-        console.log(`Erreur de connexion à MongoDB: ${err.message}`);
+        logger.error(`Erreur de connexion à MongoDB: ${err.message}`);
     }
 };
 
