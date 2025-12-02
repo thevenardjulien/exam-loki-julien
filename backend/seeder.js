@@ -1,7 +1,7 @@
 // backend/seeder.js
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
-const Product = require('./models/Product'); // Assurez-vous que le chemin est correct
+const Product = require('./models/Product');
 
 dotenv.config();
 
